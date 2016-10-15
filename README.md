@@ -22,6 +22,8 @@ group :development, :test do
     gem 'coveralls', require: false
 end
 ```
+-- Ok, you guys know what to do. `Bundle`. Commit often, push up when you feel like it. Moving on. --
+
 * Delete the Windows gem at the bottom if you're not working in Windows
 * `bundle install`
 * `bundle exec rails generate rspec:install`
@@ -78,6 +80,8 @@ script:
   - bundle exec rake ci:tests
 services:
   - postgresql
+notifications:
+    email: false
 ```
 (obviously, if you are using a different version of Ruby, you will put that version under `rvm`)
 
