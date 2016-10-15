@@ -8,7 +8,7 @@
 * `git checkout -b develop`
 * `git add .`
 * `git commit -m 'Initial commit'`
-* In `Gemfile`, delete everything in `:development, :test` and add:
+* In `Gemfile`, delete comments and everything in `:development, :test` and add:
 ```
 group :development, :test do
     gem 'listen', '~> 3.0.5'
@@ -19,6 +19,7 @@ group :development, :test do
     gem 'pry-byebug'
     gem 'cucumber-rails', require: false
     gem 'database_cleaner'
+    gem 'coveralls', require: false
 end
 ```
 * Delete the Windows gem at the bottom if you're not working in Windows
@@ -60,7 +61,7 @@ end
 * `rails db:migrate --all`
 * `bundle exec cucumber` -> should not error and find no examples
 
-#### Bump over to Travis and Coveralls to setup Continuous Integration / Code Coverage
+#### Bump over to Travis to setup Continuous Integration
 * Visit [Travis-ci.org](http://www.travis-ci.org):
   - Sign up or whatever you have to do.
   - Hit the little `+` next to `My Repositories`
@@ -79,6 +80,9 @@ services:
   - postgresql
 ```
 (obviously, if you are using a different version of Ruby, you will put that version under `rvm`)
+
+#### Now Coveralls for code coverage
+
 * Create `lib/tasks/ci.rake`. Add:
 ```
 unless Rails.env.production?
@@ -111,3 +115,4 @@ Coveralls.wear!
 require 'coveralls'
 Coveralls.wear_merged!("rails")
 ```
+* `rake` will run both `rspec` and `cucumber` --> should pass with no errors, and no examples
