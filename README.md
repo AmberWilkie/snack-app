@@ -55,3 +55,42 @@ config.around(:each) do |example|
 end
 ```
 * `bundle exec rspec` --> this should work now and return no errors (and also no tests, because you haven't written any)
+* `bundle exec rails generate cucumber:install`
+* `rails db:create --all`
+* `rails db:migrate --all`
+* `bundle exec cucumber` -> should not error and find no examples
+
+#### Bump over to Travis to setup Continuous Integration
+* Visit [Travis-ci.org](http://www.travis-ci.org):
+  - Sign up or whatever you have to do.
+  - Hit the little `+` next to `My Repositories`
+  - Flip the switch on the repository you just created
+* Create a file in the root of your folder called `.travis.yml`. Add:
+```
+language: ruby
+rvm:
+  - 2.3.0
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rake ci:tests
+services:
+  - postgresql
+```
+(obviously, if you are using a different version of Ruby, you will put that version under `rvm`)
+* Create `lib/tasks/ci.rake`. Add:
+```
+unless Rails.env.production?
+    require 'rspec/core/rake_task'
+    require 'cucumber/rake/task'
+    require 'coveralls/rake/task'
+
+    Coveralls::RakeTask.new
+
+    namespace :ci do
+      desc 'Run all tests and generate a merged coverage report'
+      task tests: [:spec, :cucumber, 'coveralls:push']
+    end
+end
+```
