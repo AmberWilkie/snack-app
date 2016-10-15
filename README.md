@@ -94,3 +94,7 @@ unless Rails.env.production?
     end
 end
 ```
+* Create `.simplecov` in root folder. Add:
+```
+SimpleCov.start 'rails'
+```
