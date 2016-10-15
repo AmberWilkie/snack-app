@@ -60,7 +60,7 @@ end
 * `rails db:migrate --all`
 * `bundle exec cucumber` -> should not error and find no examples
 
-#### Bump over to Travis to setup Continuous Integration
+#### Bump over to Travis and Coveralls to setup Continuous Integration / Code Coverage
 * Visit [Travis-ci.org](http://www.travis-ci.org):
   - Sign up or whatever you have to do.
   - Hit the little `+` next to `My Repositories`
@@ -98,3 +98,6 @@ end
 ```
 SimpleCov.start 'rails'
 ```
+* Visit `coveralls.io`:
+  - Sign up or whatever.
+  - Hit the plus sign, then flip the switch on your new repo. (You probably have to refresh to see it.)
