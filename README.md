@@ -17,6 +17,8 @@ group :development, :test do
     gem 'factory_girl_rails'
     gem 'pry'
     gem 'pry-byebug'
+    gem 'cucumber-rails', require: false
+    gem 'database_cleaner'
 end
 ```
 * Delete the Windows gem at the bottom if you're not working in Windows
@@ -32,3 +34,24 @@ Shoulda::Matchers.configure do |config|
     end
 end
 ```
+* In `config/application.rb` remove comments and add inside `class Application`:
+```
+config.generators do |generate|
+    generate.helper false
+    generate.assets false
+    generate.view_specs false
+    generate.helper_specs false
+    generate.routing_specs false
+    generate.controller_specs false
+end
+config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+end
+config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+end
+```
+* `bundle exec rspec` --> this should work now and return no errors (and also no tests, because you haven't written any)
