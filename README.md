@@ -101,3 +101,13 @@ SimpleCov.start 'rails'
 * Visit `coveralls.io`:
   - Sign up or whatever.
   - Hit the plus sign, then flip the switch on your new repo. (You probably have to refresh to see it.)
+* At the very top of `spec_helper`:
+```
+require 'coveralls'
+Coveralls.wear!
+```
+* Create `/features/support/env.rb`. Delete comments. Add:
+```
+require 'coveralls'
+Coveralls.wear_merged!("rails")
+```
