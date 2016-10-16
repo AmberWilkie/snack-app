@@ -1,5 +1,5 @@
 # Blank Rails Scaffold with Continuous Integration & Development
-#### Plus, bonus Ionic scaffold
+It is well outside the scope of this README to explain the benefits of Continuous Integration and Continuous Deployment. If you're intrigued, start [here](http://www.agilemanifesto.org) and keep reading. Otherwise, here we goooooo
 
 ### Step-by-step to a scaffolded Rails app with Postgres, Travis and Coveralls:
 * Create repo on GitHub. Include Rails `.gitignore` and optional `README`. Copy path to repo.
@@ -63,7 +63,7 @@ end
 * `rails db:migrate --all`
 * `bundle exec cucumber` -> should not error and find no examples
 
-#### Bump over to Travis to setup Continuous Integration
+### Bump over to Travis to setup Continuous Integration
 * Visit [Travis-ci.org](http://www.travis-ci.org):
   - Sign up or whatever you have to do.
   - Hit the little `+` next to `My Repositories`
@@ -83,9 +83,9 @@ services:
 notifications:
     email: false
 ```
-(obviously, if you are using a different version of Ruby, you will put that version under `rvm`)
+(Obviously, if you are using a different version of Ruby, you will put that version under `rvm`. And if you want a thousand emails about your builds passing or failing, don't include the last two lines.)
 
-#### Now Coveralls for code coverage
+### Now Coveralls for code coverage
 
 * Create `lib/tasks/ci.rake`. Add:
 ```
@@ -120,3 +120,27 @@ require 'coveralls'
 Coveralls.wear_merged!("rails")
 ```
 * `rake` will run both `rspec` and `cucumber` --> should pass with no errors, and no examples
+
+### Continuous Deployment
+* If you haven't before, you'll need to install the [Heroku Toolbelt](https://toolbelt.heroku.com/), create an account on Heroku and `heroku login` with those credentials.
+* Now `heroku create APP_NAME` twice - once for a development server, once for a production server. (If you fail to specify an app name, Heroku will make one for you).
+* You need to obtain your secure Heroku key and encrypt it. You can do so by:
+  - `travis encrypt $(heroku auth:token) --add deploy.api_key`
+  - Honestly, this has never worked for me. Instead, you an grab your Heroku key from their website and run the above line as so: `travis encrypt YOUR_HEROKU_KEY`
+* Spin back up that `.travis.yml` file and add:
+```
+deploy:
+    provider: heroku
+    api_key:
+      secure: YOUR_SECURE_KEY
+    app:
+      develop: YOUR_DEVELOPMENT_APP
+      master: YOUR_PRODUCTION_APP
+    on:
+      repo: YOUR_GITHUB_REPO
+    run:
+      - "rails db:migrate"
+```
+Format your repo like this: `CraftAcademy/sf-online-august`. This setup will deploy your application after a successful build at develop or master.
+
+##### Last step: build awesome Rails apps!!
