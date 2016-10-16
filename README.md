@@ -22,7 +22,7 @@ group :development, :test do
     gem 'coveralls', require: false
 end
 ```
--- Ok, you guys know what to do. `Bundle`. Commit often, push up when you feel like it. Moving on. --
+-- Ok, you guys know what to do. Commit often, push up when you feel like it. Moving on. --
 
 * Delete the Windows gem at the bottom if you're not working in Windows
 * `bundle install`
@@ -62,6 +62,21 @@ end
 * `rails db:create --all`
 * `rails db:migrate --all`
 * `bundle exec cucumber` -> should not error and find no examples
+* (Optional) Create pull request template for Github:
+ - `mkdir .github`
+ - `touch .github/PULL_REQUEST_TEMPLATE.md`
+ - Add:
+    ```
+     PT Story: [paste pivotal tracker link here]
+
+    Changes proposed in this pull request:
+
+    [item 1 - replace me] [item 2 - replace me] ... ... What I have learned working on this feature: [If you don't put anything here you are doing it wrong!]
+
+    Screenshots: [If you made some visual changes to the application please upload screenshots here, or remove this section]
+
+    Ready for review!
+    ```
 
 ### Bump over to Travis to setup Continuous Integration
 * Visit [Travis-ci.org](http://www.travis-ci.org):
