@@ -156,6 +156,6 @@ deploy:
     run:
       - "rails db:migrate"
 ```
-Format your repo like this: `CraftAcademy/sf-online-august`. This setup will deploy your application after a successful build at develop or master.
+Format your repo like this: `YOUR_GITHUB_NAME/PROJECT_REPO`. This setup will deploy your application after a successful build at develop or master.
 
 ##### Last step: build awesome Rails apps!!
