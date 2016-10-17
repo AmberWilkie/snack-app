@@ -53,16 +53,16 @@ Coveralls        |         Code coverage specs
   end
   ```
 - In the same file, add DatabaseCleaner bits:
-```  
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
+  ```  
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
     end
-  end
+    config.around(:each) do |example|
+      DatabaseCleaner.cleaning do
+        example.run
+      end
+    end
   ```
 
 - In `config/application.rb` remove comments and add inside `class Application`:
