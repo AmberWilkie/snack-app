@@ -157,7 +157,7 @@ Here we're turning off a bunch of auto-generators for things we'll be creating w
   SimpleCov.start 'rails'
   ```
 
-- Visit `coveralls.io`:
+- Visit [coveralls.io](http://coveralls.io):
 
   - Sign up or whatever.
   - Hit the plus sign, then flip the switch on your new repo. (You probably have to refresh to see it.)
@@ -169,13 +169,15 @@ Here we're turning off a bunch of auto-generators for things we'll be creating w
   Coveralls.wear!
   ```
 
-- Create `/features/support/env.rb`. Delete comments. Add:
+- In `/features/support/env.rb`: Delete comments. Add:
 
   ```
   require 'coveralls'
   Coveralls.wear_merged!("rails")
   ```
   These four lines of code will generate code coverage reports for Coveralls. Access them on the Coveralls website.
+
+- Add `/coverage` to `.gitignore`
 
 - `rake` will run both `rspec` and `cucumber` --> should pass with no errors, and no examples
 
@@ -186,7 +188,7 @@ Here we're turning off a bunch of auto-generators for things we'll be creating w
 - You need to obtain your secure Heroku key and encrypt it. You can do so by:
 
   - `travis encrypt $(heroku auth:token) --add deploy.api_key`
-  - Honestly, this has never worked for me. Instead, you an grab your Heroku key from their website and run the above line as so: `travis encrypt YOUR_HEROKU_KEY`
+  - Honestly, this has never worked for me. Instead, you an grab your Heroku key with `heroku auth:token` and run: `travis encrypt YOUR_HEROKU_KEY`. If you've never used Travis before, you'll have to `gem install travis`.
 
 - Spin back up that `.travis.yml` file and add:
 
