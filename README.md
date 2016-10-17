@@ -52,6 +52,18 @@ Coveralls        |         Code coverage specs
     end
   end
   ```
+- In the same file, add DatabaseCleaner bits:
+```  
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+  ```
 
 - In `config/application.rb` remove comments and add inside `class Application`:
 
@@ -66,19 +78,6 @@ Coveralls        |         Code coverage specs
   end
 ```
 Here we're turning off a bunch of auto-generators for things we'll be creating while we build the app. We've turned them all off, but we might want to leave some on if our project is complex or if we are going to have a lot of helpers, etc.
-
-- In the same file, add DatabaseCleaner bits:
-```  
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-  ```
 
 - `bundle exec rspec` --> this should work now and return no errors (and also no tests, because you haven't written any)
 - Install Cucumber acceptance testing: `bundle exec rails g cucumber:install`
