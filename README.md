@@ -207,5 +207,8 @@ Here we're turning off a bunch of auto-generators for things we'll be creating w
   ```
 
   Format your repo like this: `YOUR_GITHUB_NAME/PROJECT_REPO`. This setup will deploy your application after a successful build at develop or master.
+  
+## Files to Adjust
+- `config/database.yml` - rename your databases or they will be stuck at "blank_rails_scaffold".
 
 ### Last step: build awesome Rails apps!!
