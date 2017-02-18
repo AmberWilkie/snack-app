@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   def create
-    friend = User.find_by(params[:id])
+    friend = User.find(params[:id])
     current_user.friend_request(friend)
   end
 
