@@ -5,6 +5,10 @@ require 'cucumber/rails'
 
 ActionController::Base.allow_rescue = false
 
+Warden.test_mode!
+World Warden::Test::Helpers
+After { Warden.test_reset! }
+
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError

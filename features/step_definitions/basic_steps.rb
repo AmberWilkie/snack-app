@@ -16,3 +16,7 @@ end
 And(/^I select "([^"]*)" from "([^"]*)"$/) do |content, element|
   select content, from: element
 end
+
+And(/^I should not see "([^"]*)"$/) do |content|
+  expect(page).not_to have_content content
+end

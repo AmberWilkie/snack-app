@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
+gem 'has_friendship'
+
 
 group :development, :test do
   gem 'listen', '~> 3.0.5'
