@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   }
   root 'home#index'
   resources :home, only: [:index, :show]
+  resources :friendships, only: [:create]
+  post '/confirm_friends', controller: :friendships, action: :confirm, as: :confirm_friendship
 end

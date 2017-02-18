@@ -1,8 +1,56 @@
 .row
   .medium-4.column.profile-image
     %i.fa.fa-user.profile-default-image
+    - unless current_user == @user
+      .social-links.signup-panel
+        =form_tag friendships_path, method: :post, remote: true do
+          = hidden_field_tag 'id', params[:id]
+          = submit_tag 'Friend', class: 'button', id: 'friend_button'
+
   .medium-8.column.left
     %h1.profile
-      = current_user.name
+      = @user.name
     %p
-      = current_user.blurb
+      = @user.blurb
+
+  - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty? && current_user == @user
+    %hr.betterhr
+    .friends-scroll.columns
+      .medium-8.column
+        %h2 My Friends
+        - current_user.friends.each do |friend|
+          = friend.name
+      .medium-4.column
+        %h2 New Friends?
+        - current_user.requested_friends.each do |friend|
+          %div{id:"friend_#{friend.id}"}
+            .columns
+              .medium-6.column
+                = link_to friend.name, home_path(friend)
+              .medium-6.column
+                =form_tag confirm_friendship_path, method: :post, remote: true do
+                  = hidden_field_tag 'id', friend.id
+                  = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
+              %hr.betterhr
+
+:javascript
+  $(document).ready( function() {
+    function friendButton() {
+      $('#friend_button')[0].defaultValue = 'Requested'
+    }
+    const friend_button = document.querySelector('#friend_button');
+    if (friend_button != undefined) {
+      friend_button.addEventListener('click', friendButton);
+    }
+
+    function confirmFriend() {
+    console.log('working?');
+      this.defaultValue = 'Done!'
+    }
+
+    const confirm_buttons = document.querySelectorAll('#confirm_button');
+    console.log(confirm_buttons);
+    confirm_buttons.forEach(button => function() {
+      button.addEventListener('click', confirmFriend)
+    })
+  })

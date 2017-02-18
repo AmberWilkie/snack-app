@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
+gem 'has_friendship'
+
 
 group :development, :test do
   gem 'listen', '~> 3.0.5'
@@ -24,6 +26,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'coveralls', require: false
   gem 'erb2haml'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'phantomjs'
 end
 
 group :development do
