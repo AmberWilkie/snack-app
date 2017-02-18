@@ -13,14 +13,13 @@
     %p
       = @user.blurb
 
-  - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty?
+  - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty? && current_user == @user
     %hr.betterhr
     .friends-scroll.columns
       .medium-8.column
         %h2 My Friends
         - current_user.friends.each do |friend|
           = friend.name
-          = friend.blurb
       .medium-4.column
         %h2 New Friends?
         - current_user.requested_friends.each do |friend|
@@ -45,10 +44,12 @@
     }
 
     function confirmFriend() {
+    console.log('working?');
       this.defaultValue = 'Done!'
     }
 
-    const confirm_buttons = document.querySelectorAll('button#confirm_button');
+    const confirm_buttons = document.querySelectorAll('#confirm_button');
+    console.log(confirm_buttons);
     confirm_buttons.forEach(button => function() {
       button.addEventListener('click', confirmFriend)
     })
