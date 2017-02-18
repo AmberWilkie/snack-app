@@ -34,9 +34,19 @@ Then(/^"([^"]*)" should be in the "([^"]*)" list for "([^"]*)"$/) do |friend_nam
   me = User.find_by(name: my_name)
   case list
     when "pending friends"
-      binding.pry
       expect(me.pending_friends.last).to eq friend
     when "requested friends"
       expect(me.requested_friends.last).to eq friend
+    when "friends"
+      expect(me.friends.last).to eq friend
+    else
+      expect(2+2).to eq 5
+  end
+end
+
+When(/^I click "([^"]*)" for "([^"]*)"$/) do |link, name|
+  friend = User.find_by(name: name)
+  within(:css, "#friend_#{friend.id}") do
+    click_link_or_button link
   end
 end

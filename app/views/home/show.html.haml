@@ -23,8 +23,11 @@
       .medium-4.column
         %h2 New Friends?
         - current_user.requested_friends.each do |friend|
-          = link_to friend.name, home_path(friend)
-          = friend.blurb
+          %div{id:"friend_#{friend.id}"}
+            = link_to friend.name, home_path(friend)
+            =form_tag confirm_friendship_path, method: :post, remote: true do
+              = hidden_field_tag 'id', friend.id
+              = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
 
 :javascript
   $(document).ready( function() {
