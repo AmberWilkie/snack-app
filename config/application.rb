@@ -21,6 +21,13 @@ module Snack
       generate.helper_specs false
       generate.routing_specs false
       generate.controller_specs false
+
+      generate.template_engine :haml
+
+      # you can also specify a different test framework or ORM here
+      # g.test_framework  :rspec
+      # g.orm             :mongoid
+
     end
   end
 end

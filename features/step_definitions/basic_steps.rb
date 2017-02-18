@@ -8,3 +8,7 @@ end
 Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
+
+And(/^I click "([^"]*)"$/) do |element|
+  click_link_or_button element
+end

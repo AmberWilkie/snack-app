@@ -11,7 +11,8 @@ Feature: Users can create an account
       | Location              |  41463                   |
       | Blurb                 |  I want to speak German! |
       | Gender                |  Prefer Not to Say       |
-
+    And I select "Prefer Not to Say" from "Gender"
+    And I click "Sign up"
     Then I should see "Welcome to Snack!"
     And I should see "Anna K."
     And I should see "I want to learn German!"
