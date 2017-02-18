@@ -18,3 +18,19 @@ end
 Then(/^I should not see the "([^"]*)" button$/) do |button|
   expect(page).to have_no_button button
 end
+
+When(/^I log out$/) do
+  logout
+end
+
+And(/^"([^"]*)" has friend\-requested "([^"]*)"$/) do |my_email, friend_email|
+  friend = User.find_by(email: friend_email)
+  me = User.find_by(email: my_email)
+  me.friend_request(friend)
+end
+
+Then(/^"([^"]*)" should be in the "([^"]*)" list for "([^"]*)"$/) do |friend_name, list, my_name|
+  friend = User.find_by(name: friend_name)
+  me = User.find_by(name: my_name)
+  expect(me.pending_friends.last).to eq friend
+end

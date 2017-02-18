@@ -15,7 +15,15 @@ Feature: Having friends
 #    And I wait for the page
 #    Then I should see "Requested"
     # The @javascript hook isn't working. Look into this.
+    Then "Ben" should be in the "pending friends" list for "Anna"
 
   Scenario: I can't "friend" myself
     When I am on the profile page for "anna@random.com"
     Then I should not see the "Friend" button
+
+  Scenario: Seeing my friends after approval
+    Given I am logged in as "anna@random.com"
+    And "anna@random.com" has friend-requested "ben@random.com"
+    When I log out
+    And I am logged in as "ben@random.com"
+    When I am on the profile page for "ben@random.com"
