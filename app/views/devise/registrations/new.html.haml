@@ -1,0 +1,33 @@
+.small-row
+  .large-12.columns
+    .signup-panel
+      %p.welcome Sign up to snack
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .row.collapse
+          .small-12.columns
+            = f.email_field :email, placeholder: 'Email', autofocus: true
+        .row.collapse
+          .small-12.columns
+            = f.password_field :password, autocomplete: "off", placeholder: 'Password'
+        .row.collapse
+          .small-12.columns
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Password Confirmation'
+        .row.collapse
+          .small-12.columns
+            = f.text_field :name, placeholder: 'Name'
+        .row.collapse
+          .small-12.columns
+            = f.text_field :location, placeholder: 'Zip Code'
+        .row.collapse
+          .small-12.columns
+            = f.text_area :blurb, placeholder: 'Tell others about you! (Or skip for later)', id: 'blurb'
+        .row.collapse
+          .small-12.columns.select
+            -#= f.label :gender
+            = f.select :gender, User::GENDERS, include_blank: 'Gender', disabled: 'Gender', id: 'gender'
+        .row.collapse
+          .small-12.columns
+        = f.submit "Sign up", class: 'button'
+      %p
+  = render "devise/shared/links"
