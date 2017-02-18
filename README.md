@@ -24,3 +24,4 @@ ___________
 - Install an admin interface so users and forum posts can be monitored for inappropriate activity
 - Research security settings and make sure user data is not compromisable
 - Add photos for users
+- Install i18n translation for at least Swedish, hopefully other languages too (will need help - Arabic, anyone?)
