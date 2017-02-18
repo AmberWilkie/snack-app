@@ -20,3 +20,11 @@ end
 And(/^I should not see "([^"]*)"$/) do |content|
   expect(page).not_to have_content content
 end
+
+And(/^I wait for the page$/) do
+  sleep(1)
+end
+
+Then(/^show me the page$/) do
+  save_and_open_page
+end

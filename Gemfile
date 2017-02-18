@@ -26,6 +26,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'coveralls', require: false
   gem 'erb2haml'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'phantomjs'
 end
 
 group :development do

@@ -1,3 +1,4 @@
+@javascript
 Feature: Having friends
 
   Background:
@@ -11,7 +12,9 @@ Feature: Having friends
   Scenario: I "friend" someone
     Given I am on the profile page for "ben@random.com"
     When I click "Friend"
-    Then I should see "You and Ben are now friends!"
+    And I wait for the page
+    Then I should see "Requested"
     When I am on the profile page for "anna@random.com"
     Then I should see "Ben"
     And I should not see "Jon"
+    And I should not see "Friend"
