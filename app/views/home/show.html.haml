@@ -14,7 +14,8 @@
       = @user.blurb
 
   - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty?
-    .friends-scroll
+    %hr.betterhr
+    .friends-scroll.columns
       .medium-8.column
         %h2 My Friends
         - current_user.friends.each do |friend|
@@ -24,10 +25,14 @@
         %h2 New Friends?
         - current_user.requested_friends.each do |friend|
           %div{id:"friend_#{friend.id}"}
-            = link_to friend.name, home_path(friend)
-            =form_tag confirm_friendship_path, method: :post, remote: true do
-              = hidden_field_tag 'id', friend.id
-              = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
+            .columns
+              .medium-6.column
+                = link_to friend.name, home_path(friend)
+              .medium-6.column
+                =form_tag confirm_friendship_path, method: :post, remote: true do
+                  = hidden_field_tag 'id', friend.id
+                  = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
+              %hr.betterhr
 
 :javascript
   $(document).ready( function() {
