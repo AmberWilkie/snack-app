@@ -12,3 +12,7 @@ end
 And(/^I click "([^"]*)"$/) do |element|
   click_link_or_button element
 end
+
+And(/^I select "([^"]*)" from "([^"]*)"$/) do |content, element|
+  select content, from: element
+end
