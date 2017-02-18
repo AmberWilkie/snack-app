@@ -32,5 +32,10 @@ end
 Then(/^"([^"]*)" should be in the "([^"]*)" list for "([^"]*)"$/) do |friend_name, list, my_name|
   friend = User.find_by(name: friend_name)
   me = User.find_by(name: my_name)
-  expect(me.pending_friends.last).to eq friend
+  case list
+    when "pending friends"
+      expect(me.pending_friends.last).to eq friend
+    when "requested friends"
+      expect(me.requested_friends.last).to eq friend
+  end
 end

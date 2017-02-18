@@ -12,6 +12,19 @@
     %p
       = @user.blurb
 
+  - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty?
+    .friends-scroll
+      .medium-8.column
+        %h2 My Friends
+        - current_user.friends.each do |friend|
+          = friend.name
+          = friend.blurb
+      .medium-4.column
+        %h2 New Friends
+        - current_user.requested_friends.each do |friend|
+          = link_to friend.name, home_path(friend)
+          = friend.blurb
+
 :javascript
   $(document).ready( function() {
     function friendButton() {
