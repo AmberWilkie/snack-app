@@ -1,14 +1,19 @@
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_friend, only: [:create, :confirm]
 
   def create
-    friend = User.find(params[:id])
-    current_user.friend_request(friend)
+    current_user.friend_request(@friend)
   end
 
   def confirm
-    friend = User.find(params[:id])
-    current_user.accept_request(friend)
+    current_user.accept_request(@friend)
+  end
+
+  private
+
+  def find_friend
+    @friend = User.find(params[:id])
   end
 
 end
