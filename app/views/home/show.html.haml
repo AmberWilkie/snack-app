@@ -17,5 +17,8 @@
     function friendButton() {
       $('#friend_button')[0].defaultValue = 'Requested'
     }
-    document.querySelector('#friend_button').addEventListener('click', friendButton);
+    const friend_button = document.querySelector('#friend_button');
+    if (friend_button != undefined) {
+      friend_button.addEventListener('click', friendButton);
+    }
   })
