@@ -14,3 +14,7 @@ And(/^I am logged in as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
   login_as(user)
 end
+
+Then(/^I should not see the "([^"]*)" button$/) do |button|
+  expect(page).to have_no_button button
+end

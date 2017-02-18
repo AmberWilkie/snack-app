@@ -1,15 +1,16 @@
 .row
   .medium-4.column.profile-image
     %i.fa.fa-user.profile-default-image
-    .social-links.signup-panel
-      =form_tag friendships_path(params[:id]), method: :post, remote: true do
-        = submit_tag 'Friend', class: 'button', id: 'friend_button'
+    - unless current_user == @user
+      .social-links.signup-panel
+        =form_tag friendships_path(params[:id]), method: :post, remote: true do
+          = submit_tag 'Friend', class: 'button', id: 'friend_button'
 
   .medium-8.column.left
     %h1.profile
-      = current_user.name
+      = @user.name
     %p
-      = current_user.blurb
+      = @user.blurb
 
 :javascript
   $(document).ready( function() {
