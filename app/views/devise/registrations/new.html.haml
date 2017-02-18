@@ -1,37 +1,33 @@
-%h2 Sign up to snack
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :location
-    %br/
-    = f.text_field :location
-  .field
-    = f.label :blurb
-    %br/
-    = f.text_area :blurb
-  .field
-    = f.label :gender
-    %br/
-    = f.select :gender, User::GENDERS
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.small-row
+  .large-12.columns
+    .signup-panel
+      %p.welcome Sign up to snack
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .row.collapse
+          .small-12.columns
+            = f.email_field :email, placeholder: 'Email', autofocus: true
+        .row.collapse
+          .small-12.columns
+            = f.password_field :password, autocomplete: "off", placeholder: 'Password'
+        .row.collapse
+          .small-12.columns
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Password Confirmation'
+        .row.collapse
+          .small-12.columns
+            = f.text_field :name, placeholder: 'Name'
+        .row.collapse
+          .small-12.columns
+            = f.text_field :location, placeholder: 'Zip Code'
+        .row.collapse
+          .small-12.columns
+            = f.text_area :blurb, placeholder: 'Tell others about you! (Or skip for later)', id: 'blurb'
+        .row.collapse
+          .small-12.columns.select
+            -#= f.label :gender
+            = f.select :gender, User::GENDERS, include_blank: 'Gender', disabled: 'Gender', id: 'gender'
+        .row.collapse
+          .small-12.columns
+        = f.submit "Sign up", class: 'button'
+      %p
+  = render "devise/shared/links"

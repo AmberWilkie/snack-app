@@ -6,11 +6,11 @@ Feature: Users can create an account
       | element               |  content                 |
       | Email                 |  email@random.com        |
       | Password              |  password                |
-      | Password confirmation |  password                |
+      | Password Confirmation |  password                |
       | Name                  |  Anna K.                 |
-      | Location              |  41463                   |
-      | Blurb                 |  I want to speak German! |
-    And I select "Prefer Not to Say" from "Gender"
+      | Zip Code              |  41463                   |
+      | blurb                 |  I want to speak German! |
+    And I select "Prefer Not to Say" from "user_gender"
     And I click "Sign up"
     Then I should see "Welcome to Snack!"
     And I should see "Anna K."
