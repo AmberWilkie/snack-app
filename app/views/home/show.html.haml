@@ -1,6 +1,10 @@
 .row
   .medium-4.column.profile-image
     %i.fa.fa-user.profile-default-image
+    .social-links
+      =form_tag friendships_path(params[:id]), method: :post, remote: true do
+        = submit_tag 'Friend'
+          
   .medium-8.column.left
     %h1.profile
       = current_user.name
