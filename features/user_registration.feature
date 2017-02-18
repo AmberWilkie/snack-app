@@ -14,4 +14,4 @@ Feature: Users can create an account
     And I click "Sign up"
     Then I should see "Welcome to Snack!"
     And I should see "Anna K."
-    And I should see "I want to learn German!"
+    And I should see "I want to speak German!"
