@@ -43,4 +43,13 @@
     if (friend_button != undefined) {
       friend_button.addEventListener('click', friendButton);
     }
+
+    function confirmFriend() {
+      this.defaultValue = 'Done!'
+    }
+
+    const confirm_buttons = document.querySelectorAll('button#confirm_button');
+    confirm_buttons.forEach(button => function() {
+      button.addEventListener('click', confirmFriend)
+    })
   })
