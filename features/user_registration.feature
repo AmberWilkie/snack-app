@@ -12,7 +12,7 @@ Feature: Users can create an account
       | blurb                 | I want to speak German! |
     And I select "Prefer Not to Say" from "user_gender"
     And I select "French" and "Spanish" from "user_language_list"
-#    And I select "Swedish" from "Languages I want to learn"
+    And I select "Swedish" from "user_learnings_list"
     And I click "Sign up"
     Then I should see:
       | text                    |
@@ -20,3 +20,4 @@ Feature: Users can create an account
       | Anna K.                 |
       | I want to speak German! |
       | Spanish                 |
+      | Swedish                 |

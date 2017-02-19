@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_friendship
-  acts_as_taggable_on :languages
+  acts_as_taggable_on :languages, :learnings
 
   before_save :check_languages
 
@@ -21,6 +21,12 @@ class User < ApplicationRecord
     self.language_list.each do |language|
       unless LANGUAGES.include?(language)
         self.language_list.delete(language)
+      end
+    end
+
+    self.learning_list.each do |learning|
+      unless LANGUAGES.include?(learning)
+        self.learning_list.delete(learning)
       end
     end
   end
