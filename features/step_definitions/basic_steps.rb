@@ -28,3 +28,14 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+And(/^I select "([^"]*)" and "([^"]*)" from "([^"]*)"$/) do |content1, content2, element|
+  select content1, from: element
+  select content2, from: element
+end
+
+Then(/^I should see:$/) do |table|
+  table.hashes.each do |hash|
+    expect(page).to have_content hash[:text]
+  end
+end

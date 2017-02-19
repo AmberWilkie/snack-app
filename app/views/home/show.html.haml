@@ -12,6 +12,11 @@
       = @user.name
     %p
       = @user.blurb
+    %p
+      - unless @user.language_list.empty?
+        .languages
+          - @user.language_list.each do |language|
+            = language
 
   - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty? && current_user == @user
     %hr.betterhr

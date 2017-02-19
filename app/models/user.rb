@@ -16,6 +16,8 @@ class User < ApplicationRecord
   private
 
   def check_languages
+    # binding.pry
+
     self.language_list.each do |language|
       unless LANGUAGES.include?(language)
         self.language_list.delete(language)
