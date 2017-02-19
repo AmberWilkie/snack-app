@@ -251,3 +251,25 @@ h1.profile {
 .language-box {
 
 }
+/**************
+NAV BAR
+ */
+.nav-bar {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    /*text-align: left;*/
+    padding: 5px;
+    background-color: #3c3c3c;
+    margin-bottom: 0;
+    /*vertical-align: middle;*/
+}
+.nav-link {
+    color: #fff;
+}
+a:hover.nav-link {
+    color: #ff9012;
+}
+ul.no-bullet {
+    margin-bottom: 0;
+}

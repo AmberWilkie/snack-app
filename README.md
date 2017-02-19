@@ -2,6 +2,9 @@
 ### A social media platform for connecting with other language learners. Gothenburg, Sweden only for now.
 ___________
 
+### Deployed
+You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.com)
+
 ### Built With
 - Rails
 - HAML
@@ -15,7 +18,7 @@ ___________
 ## To Do
 - ~~Add languages for users~~
 - ~~Install `has_friendship` so users can friend each other~~
-- Deploy app for staging / testing
+- ~~Deploy app for staging / testing~~
 - Figure out how users can find others whose languages match up (interests from AM?)
 - Install a messaging service so users can message each other
 - Style and sanitize params for login, edit user registration
