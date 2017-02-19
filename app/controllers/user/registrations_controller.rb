@@ -4,6 +4,10 @@ class User::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def edit
+    super
+  end
+
   def update
     super
   end
@@ -16,8 +20,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    build_language_list
-    home_path(resource)
+    after_sign_up_path_for(resource)
   end
 
   def build_language_list

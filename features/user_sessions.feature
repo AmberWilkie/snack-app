@@ -28,6 +28,6 @@ Feature: I can login and out (and use the nav bar)
       | user[current_password] | password        |
       | Name                   | A New Anna      |
     And I click "Update"
-    Then I should be on the profile page for "Anna"
+    Then I should be on the profile page for "A New Anna"
     Then I should see "A New Anna"
 
