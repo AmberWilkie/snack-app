@@ -39,9 +39,14 @@ RSpec.describe User, type: :model do
 
     it 'prevents non-accepted languages' do
       bob.language_list.add('Weird')
-      # binding.pry
       bob.save
       expect(bob.language_list.last).not_to eq 'Weird'
+    end
+
+    it 'can add a bunch of languages at once and reject the non-accepted' do
+      bob.language_list.add('Swahili', 'German', 'WEIRD', 'Hindi/Urdu', 'Not a language')
+      bob.save
+      expect(bob.language_list).to eq (['Swahili', 'German', 'Hindi/Urdu'])
     end
 
   end
