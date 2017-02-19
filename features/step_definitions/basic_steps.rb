@@ -2,6 +2,8 @@ Given(/^I am on the "([^"]*)" page$/) do |page|
   case page
     when 'registration'
       visit new_user_registration_path
+    when 'home'
+      visit root_path
   end
 end
 
