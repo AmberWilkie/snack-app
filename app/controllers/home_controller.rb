@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def show
+    # binding.pry
     @user = User.find(params[:id])
   end
 end
