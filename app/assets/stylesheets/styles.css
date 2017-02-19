@@ -31,6 +31,10 @@
     text-align: left;
 }
 
+.padding-5 {
+    padding: 5px;
+}
+
 .container {
     position: relative;
     z-index: 99;
@@ -77,6 +81,10 @@ body {
 
 .medium-big {
     font-size: 200%;
+}
+
+.medium-font {
+    font-size: 125%;
 }
 
 .betterhr {
@@ -238,4 +246,8 @@ USER PROFILE
 }
 h1.profile {
     font-size: 5em;
+}
+
+.language-box {
+
 }

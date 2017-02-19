@@ -24,8 +24,13 @@
             = f.text_area :blurb, placeholder: 'Tell others about you! (Or skip for later)', id: 'blurb'
         .row.collapse
           .small-12.columns.select
-            -#= f.label :gender
             = f.select :gender, User::GENDERS, include_blank: 'Gender', disabled: 'Gender', id: 'gender'
+        .row.collapse
+          .small-12.columns.select
+            = f.select :language_list, options_for_select(User::LANGUAGES), { include_blank: 'Languages I speak' }, { multiple: true, size: 7 }
+        .row.collapse
+          .small-12.columns.select
+            = f.select :learning_list, options_for_select(User::LANGUAGES), { include_blank: 'Languages I want to learn' }, { multiple: true, size: 7 }
         .row.collapse
           .small-12.columns
         = f.submit "Sign up", class: 'button'

@@ -13,6 +13,7 @@ gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'has_friendship'
+gem 'acts-as-taggable-on'
 
 
 group :development, :test do
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'phantomjs'
+  gem 'faker'
 end
 
 group :development do

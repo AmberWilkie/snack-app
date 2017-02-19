@@ -7,6 +7,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
+    build_language_list
     home_path(resource)
   end
 
@@ -17,7 +18,15 @@ class User::RegistrationsController < Devise::RegistrationsController
                                  :name,
                                  :location,
                                  :blurb,
-                                 :gender)
+                                 :gender,
+                                 :language_list)
 
+  end
+
+  def build_language_list
+    # this is so wrong, don't know why I can't get it working from sign_up_params
+    @user.language_list = params[:user][:language_list]
+    @user.learning_list = params[:user][:learning_list]
+    @user.save
   end
 end

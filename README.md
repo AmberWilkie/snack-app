@@ -13,8 +13,9 @@ ___________
 - Coveralls
 
 ## To Do
-- Add languages for users
-- Install `has_friendship` so users can friend each other
+- ~~Add languages for users~~
+- ~~Install `has_friendship` so users can friend each other~~
+- Deploy app for staging / testing
 - Figure out how users can find others whose languages match up (interests from AM?)
 - Install a messaging service so users can message each other
 - Style and sanitize params for login, edit user registration
@@ -25,3 +26,5 @@ ___________
 - Research security settings and make sure user data is not compromisable
 - Add photos for users
 - Install i18n translation for at least Swedish, hopefully other languages too (will need help - Arabic, anyone?)
+- Style flash messages
+- Users' language list should be tags to lists of users who speak / want to speak those languages
