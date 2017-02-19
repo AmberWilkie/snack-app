@@ -13,6 +13,7 @@ gem 'devise'
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'has_friendship'
+gem 'acts-as-taggable-on', '~> 4.0'
 
 
 group :development, :test do
