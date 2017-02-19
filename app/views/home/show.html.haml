@@ -10,17 +10,19 @@
   .medium-8.column.left
     %h1.profile
       = @user.name
+    .language-box
+      - unless @user.language_list.empty?
+        .languages.padding-5
+          - @user.language_list.each do |language|
+            %span.primary.label.medium-font
+              = language
+      - unless @user.learning_list.empty?
+        .learnings.padding-5
+          - @user.learning_list.each do |learning|
+            %span.label.success.medium-font
+              = learning
     %p
       = @user.blurb
-    %p
-      - unless @user.language_list.empty?
-        .languages
-          - @user.language_list.each do |language|
-            = language
-      - unless @user.learning_list.empty?
-        .learnings
-          - @user.learning_list.each do |learning|
-            = learning
 
   - unless current_user.friends.empty? && current_user.requested_friends.empty? && current_user.pending_friends.empty? && current_user == @user
     %hr.betterhr
