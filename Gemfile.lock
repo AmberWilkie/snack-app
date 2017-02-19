@@ -276,7 +276,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on (~> 4.0)
+  acts-as-taggable-on
   coffee-rails (~> 4.2)
   coveralls
   cucumber-rails
