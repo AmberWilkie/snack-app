@@ -30,6 +30,7 @@ group :development, :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'phantomjs'
+  gem 'faker'
 end
 
 group :development do

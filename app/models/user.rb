@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_friendship
+  acts_as_taggable_on :languages
 
   validates_presence_of :name
 
