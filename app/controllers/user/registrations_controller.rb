@@ -4,6 +4,10 @@ class User::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def update
+    super
+  end
+
   protected
 
   def after_sign_up_path_for(resource)
@@ -11,16 +15,9 @@ class User::RegistrationsController < Devise::RegistrationsController
     home_path(resource)
   end
 
-  def sign_up_params
-    params.require(:user).permit(:email,
-                                 :password,
-                                 :password_confirmation,
-                                 :name,
-                                 :location,
-                                 :blurb,
-                                 :gender,
-                                 :language_list)
-
+  def after_update_path_for(resource)
+    build_language_list
+    home_path(resource)
   end
 
   def build_language_list
