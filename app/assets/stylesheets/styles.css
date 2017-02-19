@@ -229,6 +229,13 @@ input {
     /*margin-left: 35%;*/
 }
 
+.remember-box {
+    line-height: normal;
+    margin: auto;
+    display: inline;
+    vertical-align: middle;
+}
+
 /*******************
 USER PROFILE
  */
