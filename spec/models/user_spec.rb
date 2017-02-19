@@ -24,4 +24,25 @@ RSpec.describe User, type: :model do
       expect(FactoryGirl.create(:user)).to be_valid
     end
   end
+
+  describe 'Languages' do
+    let(:bob) { FactoryGirl.create(:user)}
+
+    it 'should have a language list' do
+      expect(bob.language_list).to be_truthy
+    end
+
+    it 'can add languages' do
+      bob.language_list.add('French')
+      expect(bob.language_list.last).to eq 'French'
+    end
+
+    it 'prevents non-accepted languages' do
+      bob.language_list.add('Weird')
+      # binding.pry
+      bob.save
+      expect(bob.language_list.last).not_to eq 'Weird'
+    end
+
+  end
 end
