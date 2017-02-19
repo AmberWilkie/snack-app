@@ -27,3 +27,4 @@ ___________
 - Add photos for users
 - Install i18n translation for at least Swedish, hopefully other languages too (will need help - Arabic, anyone?)
 - Style flash messages
+- Users' language list should be tags to lists of users who speak / want to speak those languages
