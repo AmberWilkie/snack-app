@@ -26,6 +26,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   def build_language_list
     # this is so wrong, don't know why I can't get it working from sign_up_params
     @user.language_list = params[:user][:language_list]
+    @user.learning_list = params[:user][:learning_list]
     @user.save
   end
 end
