@@ -11,7 +11,7 @@ Feature: Users can create an account
       | Zip Code              |  41463                   |
       | blurb                 |  I want to speak German! |
     And I select "Prefer Not to Say" from "user_gender"
-    And I select "French" from "Languages I speak"
+    And I select "French" from "user_language_list"
     And I select "Swedish" from "Languages I want to learn"
     And I click "Sign up"
     Then I should see "Welcome to Snack!"
