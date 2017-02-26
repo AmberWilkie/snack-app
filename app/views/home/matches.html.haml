@@ -1,1 +1,4 @@
 %h1 Matches
+- @matches.each do |user|
+  - unless user == current_user
+    = link_to user.name, home_path(user)

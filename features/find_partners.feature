@@ -17,3 +17,5 @@ Feature: As a Language Learner
     Given I am on the "matches" page
     Then I should see "Ben"
     And I should not see "Jon"
+    When I click "Ben"
+    Then I should see "Japanese"
