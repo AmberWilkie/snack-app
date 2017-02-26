@@ -4,6 +4,8 @@ Given(/^I am on the "([^"]*)" page$/) do |page|
       visit new_user_registration_path
     when 'home'
       visit root_path
+    when 'matches'
+      visit matches_path
   end
 end
 
