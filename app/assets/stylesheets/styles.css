@@ -393,12 +393,8 @@ MATCHES CARDS
     transition: all .5s ease-in-out;
 }
 
-.profile-card a {
-    color: #ff9012;
-}
-
-.profile-card a:hover {
-    color: #2199e8;
+.profile-card .text {
+    color: #2E2F30;
 }
 
 .profile-card .language-box {
