@@ -36,3 +36,4 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Style flash messages
 - Users' language list should be links to lists of users who speak / want to speak those languages
 - Production deployment to Digital Ocean
+- Language and Learning lists need to populate with the values already in the database.
