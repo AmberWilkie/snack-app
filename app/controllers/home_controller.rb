@@ -22,5 +22,9 @@ class HomeController < ApplicationController
         end
       end
     end
+    if @matches.include?(current_user)
+      @matches.delete(current_user)
+    end
+    @matches.uniq!
   end
 end
