@@ -5,6 +5,8 @@ ___________
 ### Deployed
 You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.com)
 
+[![Coverage Status](https://coveralls.io/repos/github/AmberWilkie/snack-app/badge.svg?branch=users)](https://coveralls.io/github/AmberWilkie/snack-app?branch=users)
+
 ### Built With
 - Rails
 - HAML
