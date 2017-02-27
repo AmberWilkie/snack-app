@@ -1,0 +1,33 @@
+.row
+  %h2 Matches
+  .small-row
+    Each of these awesome people is a good match for you - they speak a language you want to learn and you speak a language <em>they</em> want to learn! Go ahead and give them a "Friend", maybe you two can meet up soon to have a chat.
+  - @matches.each do |user|
+    .medium-4.column
+      %a{href: home_path(user)}
+        .profile-card
+          %i.fa.fa-user.profile-default-image
+          .profile-info
+            %h4.subheader=  user.name
+            %p.text= user.blurb
+            %p.text
+              %strong= user.location
+              .language-box
+                - unless user.language_list.empty?
+                  .languages.padding-5
+                    - user.language_list.each do |language|
+                      %span.primary.label.medium-font
+                        = language
+                - unless user.learning_list.empty?
+                  .learnings.padding-5
+                    - user.learning_list.each do |learning|
+                      %span.label.success.medium-font
+                        = learning
+    - if @matches.count % 3 == 2
+      .medium-4.column
+        &nbsp;
+      .medium-4.column
+        &nbsp;
+    - if @matches.count % 3 == 1
+      .medium-4.column
+        &nbsp;
