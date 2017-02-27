@@ -308,6 +308,8 @@ MATCHES CARDS
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin: 2rem 0;
     background-color: #fff;
+    transform: scale(0.98);
+    transition: all 0.2s;
 }
 
 .profile-card img {
@@ -399,4 +401,8 @@ MATCHES CARDS
 
 .profile-card .language-box {
     font-size: 80%;
+}
+
+.profile-card a:hover {
+    transform: scale(1)
 }
