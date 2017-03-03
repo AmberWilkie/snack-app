@@ -24,7 +24,7 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - ~~Add languages for users~~
 - ~~Install `has_friendship` so users can friend each other~~
 - ~~Deploy app for staging / testing~~
-- Figure out how users can find others whose languages match up (interests from AM?)
+- ~~Users can find others whose languages match up~~
 - Install a messaging service so users can message each other
 - ~~Style and sanitize params for login, edit user registration~~
 - ~~Create a nav bar~~
