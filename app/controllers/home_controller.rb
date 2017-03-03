@@ -7,6 +7,13 @@ class HomeController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    # Extract this to a helper and remove from Conversations controller too
+    if Conversation.between(current_user.id, @user.id).present?
+      @conversation = Conversation.between(current_user.id, @user.id).first
+    else
+      @conversation = Conversation.create!({sender_id: current_user.id, recipient_id: @user.id})
+    end
   end
 
   def matches

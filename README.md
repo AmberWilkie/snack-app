@@ -20,6 +20,9 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Travis
 - Coveralls
 
+## Props To
+- Dana Mulder, who wrote this [lovely messaging tutorial](https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1#.t14w0ok4b). It was a great jumping-off point for what I really needed.
+
 ## To Do
 - ~~Add languages for users~~
 - ~~Install `has_friendship` so users can friend each other~~
@@ -39,3 +42,4 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Users' language list should be links to lists of users who speak / want to speak those languages
 - Production deployment to Digital Ocean
 - Language and Learning lists need to populate with the values already in the database.
+- Refactor messaging to use helpers like `user.conversations`
