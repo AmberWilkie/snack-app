@@ -14,10 +14,11 @@ Feature: As a user
     Scenario: I send a message
       Given I am on the profile page for "jon@random.com"
       And I click "Message"
-      When I fill in "Body" with "A message for Jon"
+      When I fill in "message_body" with "A message for Jon"
       And I click "Send"
       Then I should see "A message for Jon"
-      When I am logged in as "jon@random.com"
+      When I log out
+      And I am logged in as "jon@random.com"
       And I am on the "inbox" page
       Then I should see "Anna"
       And I should see "New!"

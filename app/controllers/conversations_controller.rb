@@ -6,7 +6,9 @@ class ConversationsController < ApplicationController
     convos = Conversation.where(sender_id: current_user.id) + Conversation.where( recipient_id: current_user.id)
     @conversations = convos.map do |conv|
       recipient = User.find(conv.recipient_id)
+      sender = User.find(conv.sender_id)
       conv.recipient = recipient
+      conv.sender = sender
       conv
     end
   end
