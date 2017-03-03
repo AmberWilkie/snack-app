@@ -1,14 +1,6 @@
 .small-row
-  %h3 My Messages
+  %h3 My Conversations
   .ui.list
     .item
       - @conversations.each do |conversation|
         = link_to conversation.recipient.name, conversation_messages_path(conversation)
-  %div
-    %h3 New Messages?
-    .ui.list
-      - @users.each do |user|
-        - if user.id != current_user.id
-          .item
-            = user.name
-            = link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post
