@@ -43,3 +43,7 @@ Then(/^I should see:$/) do |table|
     expect(page).to have_content hash[:text]
   end
 end
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |element, content|
+  fill_in element, with: content
+end

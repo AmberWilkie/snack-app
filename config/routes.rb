@@ -3,6 +3,9 @@ Rails.application.routes.draw do
       registrations: 'user/registrations',
       sessions: 'user/sessions'
   }
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :new, :create]
+  end
   root 'home#index'
   resources :home, only: [:index, :show]
   resources :friendships, only: [:create]
