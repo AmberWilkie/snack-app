@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
     @users = current_user.friends
     convos = Conversation.where(sender_id: current_user.id) + Conversation.where( recipient_id: current_user.id)
     @conversations = convos.map do |conv|

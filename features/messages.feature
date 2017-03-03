@@ -22,3 +22,7 @@ Feature: As a user
       And I am on the "inbox" page
       Then I should see "Anna"
       And I should see "New!"
+      When I click "Anna"
+      Then I should see "A message for Jon"
+      And I am on the "inbox" page
+      Then I should not see "New!"
