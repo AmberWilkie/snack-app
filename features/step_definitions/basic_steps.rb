@@ -6,6 +6,8 @@ Given(/^I am on the "([^"]*)" page$/) do |page|
       visit root_path
     when 'matches'
       visit matches_path
+    when 'inbox'
+      visit conversations_path
   end
 end
 

@@ -1,0 +1,19 @@
+.ui.segment
+  %h3 Mailbox
+  .ui.list
+    .item
+      - @conversations.each do |conversation|
+        - if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id
+          - if conversation.sender_id == current_user.id
+            - recipient = User.find(conversation.recipient_id)
+          - else
+            - recipient = User.find(conversation.sender_id)
+          = link_to recipient.name, conversation_messages_path(conversation)
+.ui.segment
+  %h3 All Users
+  .ui.list
+    - @users.each do |user|
+      - if user.id != current_user.id
+        .item
+          = user.name
+          = link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post

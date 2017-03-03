@@ -12,11 +12,11 @@ Feature: As a user
     And I am logged in as "anna@random.com"
 
     Scenario: I send a message
-      Given I am on the "messages" page
+      Given I am on the "inbox" page
       And I click "Send a Message"
       When I select "Jon" from "Recipient"
       And I fill in "Body" with "A message for Jon"
       And I click "Send"
       When I am logged in as "jon@random.com"
-      And I am on the "messages" page
+      And I am on the "inbox" page
       Then I should see "A message for Jon"
