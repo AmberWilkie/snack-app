@@ -17,6 +17,8 @@ RSpec.describe User, type: :model do
 
   describe 'Associations' do
     it { is_expected.to have_many :friendships }
+    it { is_expected.to have_many :messages }
+    # it { is_expected.to have_many :conversations }
   end
 
   describe 'Factory' do

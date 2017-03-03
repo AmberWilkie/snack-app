@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_friendship
   acts_as_taggable_on :languages, :learnings
+  has_many :messages
+  # has_many :conversations
 
   before_save :check_languages
 
