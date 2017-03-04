@@ -78,10 +78,12 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Conversations' do
-
+    let(:bob) { FactoryGirl.create(:user)}
+    let(:jill) { FactoryGirl.create(:user)}
+    let!(:conversation) { FactoryGirl.create(:conversation, sender: bob, recipient: jill)}
 
     it 'should have conversations' do
-
+      expect(bob.conversations.first).to eq conversation
     end
   end
 end

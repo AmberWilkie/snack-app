@@ -8,7 +8,4 @@ class Conversation < ApplicationRecord
     where(" (conversations.sender_id = ? AND conversations.recipient_id =?) OR (conversations.sender_id = ? AND conversations.recipient_id =?) ", sender_id, recipient_id, recipient_id, sender_id)
   end
 
-  def conversations
-    Conversation.where("sender_id = ? OR receipient_id = ?", self.id, self.id)
-  end
 end
