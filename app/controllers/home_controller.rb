@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  # helper ConversationHelper
   before_action :authenticate_user!, only: [:matches]
 
   def index
@@ -8,7 +7,9 @@ class HomeController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @conversation = ConversationHelper.find_or_create_conversation(params, current_user, @user)
+    if current_user.friends.include?(@user)
+      @conversation = ConversationHelper.find_or_create_conversation(params, current_user, @user)
+    end
   end
 
   def matches
