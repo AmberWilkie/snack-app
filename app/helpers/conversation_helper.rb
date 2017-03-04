@@ -1,4 +1,5 @@
 module ConversationHelper
+
   def self.find_or_create_conversation(params, sender, recipient)
     @params = params
     if Conversation.between(sender.id, recipient.id).present?

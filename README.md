@@ -28,11 +28,10 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - ~~Install `has_friendship` so users can friend each other~~
 - ~~Deploy app for staging / testing~~
 - ~~Users can find others whose languages match up~~
-- Install a messaging service so users can message each other
+- ~~Install a messaging service so users can message each other~~
 - ~~Style and sanitize params for login, edit user registration~~
 - ~~Create a nav bar~~
 - Get Foundation Javascript working for a "real" nav bar
-- Find a cool background image / images to spice the place up
 - Create forums so users can post publicly
 - Install an admin interface so users and forum posts can be monitored for inappropriate activity
 - Research security settings and make sure user data is not compromisable
@@ -41,5 +40,6 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Style flash messages
 - Users' language list should be links to lists of users who speak / want to speak those languages
 - Production deployment to Digital Ocean
-- Language and Learning lists need to populate with the values already in the database.
-- Refactor messaging to use helpers like `user.conversations`
+- Language and Learning lists need to populate with the values already in the database (on the edit profile form).
+- ~~Refactor messaging to use helpers like `user.conversations`~~
+- Unit test helper methods.
