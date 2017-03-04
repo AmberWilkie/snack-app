@@ -19,7 +19,7 @@ Feature: As a user
     Then I should see "A message for Jon"
     When I log out
     And I am logged in as "jon@random.com"
-    And I am on the "home" page
+    And I am on the "inbox" page
     Then I should see "Messages (1)"
     When I click "Messages"
     Then I should see "Anna"
