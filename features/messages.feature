@@ -19,7 +19,8 @@ Feature: As a user
     Then I should see "A message for Jon"
     When I log out
     And I am logged in as "jon@random.com"
-    And I am on the "index" page
+    And I am on the "home" page
+    Then I should see "Messages (1)"
     When I click "Messages"
     Then I should see "Anna"
     And I should see "New!"
