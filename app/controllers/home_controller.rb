@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:matches]
+  before_action :authenticate_user!, only: [:show, :matches]
 
   def index
 
@@ -7,11 +7,15 @@ class HomeController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if current_user.friends.include?(@user)
+      @conversation = ConversationHelper.find_or_create_conversation(params, current_user, @user)
+    end
   end
 
   def matches
     @matches = []
     @users = User.all # I will eventually make this geographically-bounded.
+
     # Search algorithm to match language speakers with learners.
     current_user.learning_list.each do |learning|
       @users.each do |user|
@@ -27,4 +31,8 @@ class HomeController < ApplicationController
     end
     @matches.uniq!
   end
+
 end
+
+
+

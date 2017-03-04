@@ -17,6 +17,7 @@ RSpec.describe User, type: :model do
 
   describe 'Associations' do
     it { is_expected.to have_many :friendships }
+    it { is_expected.to have_many :messages }
   end
 
   describe 'Factory' do
@@ -72,6 +73,16 @@ RSpec.describe User, type: :model do
       jill.learning_list.add('Swahili', 'German', 'WEIRD', 'Hindi/Urdu', 'Not a language')
       jill.save
       expect(jill.learning_list).to eq (['Swahili', 'German', 'Hindi/Urdu'])
+    end
+  end
+
+  describe 'Conversations' do
+    let(:bob) { FactoryGirl.create(:user)}
+    let(:jill) { FactoryGirl.create(:user)}
+    let!(:conversation) { FactoryGirl.create(:conversation, sender: bob, recipient: jill)}
+
+    it 'should have conversations' do
+      expect(bob.conversations.first).to eq conversation
     end
   end
 end

@@ -1,0 +1,13 @@
+.small-row
+  %h3 My Messages
+  .ui.list
+    .item
+      - @conversations.each do |conversation|
+        - if conversation.recipient_id == current_user.id
+          = link_to conversation.sender.name, conversation_messages_path(conversation)
+          - if conversation.messages.where(recipient_read: false).any?
+            %span{class: 'unread'} New!
+        - else
+          = link_to conversation.recipient.name, conversation_messages_path(conversation)
+          - if conversation.messages.where(sender_read: false).any?
+            %span{class: 'unread'} New!

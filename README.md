@@ -20,16 +20,18 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Travis
 - Coveralls
 
+## Props To
+- Dana Mulder, who wrote this [lovely messaging tutorial](https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1#.t14w0ok4b). It was a great jumping-off point for what I really needed.
+
 ## To Do
 - ~~Add languages for users~~
 - ~~Install `has_friendship` so users can friend each other~~
 - ~~Deploy app for staging / testing~~
-- Figure out how users can find others whose languages match up (interests from AM?)
-- Install a messaging service so users can message each other
+- ~~Users can find others whose languages match up~~
+- ~~Install a messaging service so users can message each other~~
 - ~~Style and sanitize params for login, edit user registration~~
 - ~~Create a nav bar~~
 - Get Foundation Javascript working for a "real" nav bar
-- Find a cool background image / images to spice the place up
 - Create forums so users can post publicly
 - Install an admin interface so users and forum posts can be monitored for inappropriate activity
 - Research security settings and make sure user data is not compromisable
@@ -38,4 +40,6 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Style flash messages
 - Users' language list should be links to lists of users who speak / want to speak those languages
 - Production deployment to Digital Ocean
-- Language and Learning lists need to populate with the values already in the database.
+- Language and Learning lists need to populate with the values already in the database (on the edit profile form).
+- ~~Refactor messaging to use helpers like `user.conversations`~~
+- Unit test helper methods.

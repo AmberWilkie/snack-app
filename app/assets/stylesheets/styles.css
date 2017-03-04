@@ -35,6 +35,10 @@
     padding: 5px;
 }
 
+.padding-20 {
+    padding: 20px;
+}
+
 .container {
     position: relative;
     z-index: 99;
@@ -267,9 +271,11 @@ USER PROFILE
 h1.profile {
     font-size: 5em;
 }
+
 .language-box {
     line-height: 1.5em;
 }
+
 .label {
     margin: 0 0 5px 0;
 }

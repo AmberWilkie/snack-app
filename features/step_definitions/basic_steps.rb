@@ -6,6 +6,8 @@ Given(/^I am on the "([^"]*)" page$/) do |page|
       visit root_path
     when 'matches'
       visit matches_path
+    when 'inbox'
+      visit conversations_path
   end
 end
 
@@ -42,4 +44,8 @@ Then(/^I should see:$/) do |table|
   table.hashes.each do |hash|
     expect(page).to have_content hash[:text]
   end
+end
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |element, content|
+  fill_in element, with: content
 end

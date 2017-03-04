@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include ConversationHelper
   def flash_class(level)
     case level.to_sym
       when :notice then "alert alert-success"
