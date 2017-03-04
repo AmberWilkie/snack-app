@@ -12,4 +12,14 @@ RSpec.describe Conversation, type: :model do
     it { is_expected.to have_many :messages}
   end
 
+  describe 'Factory' do
+    let(:user1) { FactoryGirl.create(:user)}
+    let(:user2) { FactoryGirl.create(:user)}
+
+
+    it 'should have a valid factory' do
+      expect(FactoryGirl.create(:conversation, sender: user1, recipient: user2)).to be_valid
+    end
+  end
+
 end

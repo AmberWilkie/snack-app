@@ -76,4 +76,12 @@ RSpec.describe User, type: :model do
       expect(jill.learning_list).to eq (['Swahili', 'German', 'Hindi/Urdu'])
     end
   end
+
+  describe 'Conversations' do
+
+
+    it 'should have conversations' do
+
+    end
+  end
 end
