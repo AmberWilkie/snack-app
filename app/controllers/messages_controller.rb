@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_action :find_conversation, only: [:index, :new, :create]
 
   def index
-    @messages = @conversation.messages
+    @messages = @conversation.messages.reverse
     mark_messages_as_read
     use_pagination(params)
     @message = @conversation.messages.new
