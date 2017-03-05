@@ -43,3 +43,6 @@ bower.json
 
 # Ignore Ruby Mine files
 .idea/
+
+# Ignore 800 emojis
+public/emoji/

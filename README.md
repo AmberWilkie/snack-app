@@ -43,3 +43,7 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Language and Learning lists need to populate with the values already in the database (on the edit profile form).
 - ~~Refactor messaging to use helpers like `user.conversations`~~
 - Unit test helper methods.
+
+## To Play
+In addition to database setup and `bundle` and self-evident Rails stuff, you also need to:
+- `rake thredded:install:emoji` locally and on your server.
