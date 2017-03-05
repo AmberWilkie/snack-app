@@ -44,6 +44,8 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - ~~Refactor messaging to use helpers like `user.conversations`~~
 - Unit test helper methods.
 - Fix the stupid problem with `rails db:environment:set RAILS_ENV=test`
+- Better 404 & 500 pages
+- Facebook OAuth
 
 ## To Play
 In addition to database setup and `bundle` and self-evident Rails stuff, you also need to:
