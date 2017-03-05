@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :friendships, only: [:create]
   post '/confirm_friends', controller: :friendships, action: :confirm, as: :confirm_friendship
   get '/matches', controller: :home, action: :matches, as: :matches
+
+  mount Thredded::Engine => '/forum'
 end
