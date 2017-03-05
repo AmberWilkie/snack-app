@@ -49,6 +49,10 @@
                   = hidden_field_tag 'id', friend.id
                   = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
               %hr.betterhr
+  .posts
+    = Thredded::ApplicationController.render partial: 'thredded/users/posts',
+      locals: { posts: Thredded.posts_page_view(scope: @user.thredded_posts.order_newest_first.limit(5),
+      current_user: current_user) }
 
 :javascript
   $(document).ready( function() {

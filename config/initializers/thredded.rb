@@ -65,6 +65,7 @@ Thredded.messageboards_order = :position
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
 Thredded.layout = 'thredded/application'
+# Thredded.layout = 'layouts/thredded'
 
 # ==> Post Content Formatting
 # Customize the way Thredded handles post formatting.

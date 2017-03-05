@@ -7,7 +7,7 @@ class User::SessionsController < Devise::SessionsController
 
   def after_sign_in_path_for(resource)
     build_language_list
-    home_path(resource)
+    user_path(resource)
   end
 
   def build_language_list
