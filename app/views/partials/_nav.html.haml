@@ -11,7 +11,7 @@
         - else
           = link_to "Messages", conversations_path, class: 'nav-link'
       %li.title
-        = link_to 'My Profile', home_path(current_user), class: 'nav-link'
+        = link_to 'My Profile', user_path(current_user), class: 'nav-link'
       %li.title
         = link_to 'Edit Profile', edit_user_registration_path, class: 'nav-link'
       %li.title

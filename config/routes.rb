@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index] do
     resources :messages, only: [:index, :new, :create]
   end
-  root 'home#index'
-  resources :home, only: [:index, :show]
+  root 'users#index'
+  resources :users, only: [:index, :show]
   resources :friendships, only: [:create]
   post '/confirm_friends', controller: :friendships, action: :confirm, as: :confirm_friendship
-  get '/matches', controller: :home, action: :matches, as: :matches
+  get '/matches', controller: :users, action: :matches, as: :matches
 
   mount Thredded::Engine => '/forum'
 end
