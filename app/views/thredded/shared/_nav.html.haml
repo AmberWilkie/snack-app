@@ -4,10 +4,10 @@
       = link_to 'Home', main_app.root_path
     - if signed_in? && Thredded.standalone_layout?
       %li.thredded--user-navigation--profile.thredded--user-navigation--item
-        = link_to thredded_current_user.thredded_display_name, user_path(thredded_current_user)
+        = link_to 'My Profile', user_path(thredded_current_user)
     = render 'thredded/shared/nav/moderation'
     -#= render 'thredded/shared/nav/notification_preferences', messageboard: messageboard_or_nil
-    = render 'thredded/shared/nav/private_topics'
+    -#= render 'thredded/shared/nav/private_topics'
     - if Thredded.standalone_layout?
       = render 'thredded/shared/nav/standalone'
   - if content_for? :thredded_main_navigation
