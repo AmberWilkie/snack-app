@@ -19,3 +19,7 @@ Feature: As a user
     And I fill in "Content" with "Let's meet!"
     And I click "Create New Topic"
     Then there should be "1" topic on the board "Main Board"
+    When I click "Spanish by Stigbergstorget"
+    And I fill in "post_content" with "Yes, Spanish is great."
+    And I click "Submit Reply"
+    Then there should be "2" posts in the topic "Spanish by Stigbergstorget"
