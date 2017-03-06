@@ -14,4 +14,8 @@ Feature: As a user
   Scenario: I post in the forums
     Given I am on the "home" page
     When I click "Forum"
-    Then I should see "Main Board"
+    And I click "Main Board"
+    And I fill in "Title" with "Spanish by Stigbergstorget"
+    And I fill in "Content" with "Let's meet!"
+    And I click "Create New Topic"
+    Then there should be "1" topic on the board "Main Board"
