@@ -10,6 +10,8 @@ class User < ApplicationRecord
   before_save :check_languages
 
   validates_presence_of :name
+  validates_presence_of :username
+  validates_uniqueness_of :username
 
   GENDERS = ['Female', 'Male', 'Other', 'Prefer Not to Say']
   LANGUAGES = ['Arabic', 'Azerbaijani', 'Basque', 'Bengali', 'Berber', 'Bulgarian', 'Burmese', 'Catalan', 'Chinese Wu', 'Chinese Yue', 'Chinese/Other', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Estonian', 'Farsi', 'Finnish', 'French', 'Gaelic', 'Galician', 'German', 'Greek', 'Gujarati', 'Hausa', 'Hindi/Urdu', 'Hungarian', 'Italian', 'Japanese', 'Javanese', 'Kannada', 'Korean', 'Kurdish', 'Latvian', 'Lithuanian', 'Malay', 'Malayalam', 'Maltese', 'Mandarin', 'Marathi', 'Oriya', 'Polish', 'Portuguese', 'Punjabi', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Spanish', 'Swahili', 'Swedish', 'Tamil', 'Telugu', 'Thai', 'Turkish', 'Ukranian', 'Vietnamese']

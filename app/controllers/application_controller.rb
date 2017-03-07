@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
                                              :password,
                                              :password_confirmation,
                                              :name,
+                                             :username,
                                              :location,
                                              :blurb,
                                              :gender])
@@ -19,6 +20,7 @@ class ApplicationController < ActionController::Base
                                              :password_confirmation,
                                              :current_password,
                                              :name,
+                                             :username,
                                              :location,
                                              :blurb,
                                              :gender])

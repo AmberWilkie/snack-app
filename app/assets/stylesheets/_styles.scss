@@ -1,0 +1,422 @@
+/*.button {*/
+/*position: relative;*/
+/*}*/
+
+/*.card {
+  height: 170px;
+  width: 100px;
+  border-radius: 10%;
+  padding: 20px;
+  margin: right: 50px;
+  position: relative;
+  top: 0; left: 0; bottom: 0; right: 50px;
+  background-color: #2c3e50;
+  z-index: 1;
+  color: white;
+}*/
+
+.centered {
+  height: 500px;
+  width: 800px;
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 50%;
+  text-align: center;
+  font-size: 18px;
+  background-color: #CFCECE;
+}
+
+.left {
+  text-align: left;
+}
+
+.padding-5 {
+  padding: 5px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  z-index: 99;
+}
+
+.top-space {
+  margin-top: 10px;
+}
+
+/************
+FROM AMBERSTYLE
+*************/
+
+body {
+  background: #e6e6e6;
+  text-align: center;
+  font-family: "Roboto", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.row {
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.small-row {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.upcase {
+  text-transform: uppercase;
+}
+
+.big {
+  font-size: 300%;
+}
+
+.medium-big {
+  font-size: 200%;
+}
+
+.medium-font {
+  font-size: 125%;
+}
+
+.betterhr {
+  box-sizing: content-box;
+  max-height: 5rem;
+  max-width: 62.5rem;
+  height: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #c9c9c9;
+  border-left: 0;
+  margin: 1.25rem auto;
+  clear: both;
+}
+
+.orangehr {
+  max-width: 50px;
+  border-color: #ff9012;
+  border-width: 3px;
+  -webkit-margin-before: 0.5em;
+  -webkit-margin-after: 0.5em;
+  -webkit-margin-start: auto;
+  -webkit-margin-end: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 3px solid #ff9012;
+}
+
+.logo img {
+  height: 18.75em;
+  margin-top: 6em;
+
+}
+
+img.logo {
+  height: 2em;
+}
+
+h1, h2, h3, h4, h5 {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+/*a {*/
+/*color: #ff9012;*/
+
+/*}*/
+
+.doc {
+  margin: 3em 0;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/*a {*/
+/*border: 1px solid white;*/
+/*border-radius: 3px;*/
+/*padding: 0.75em 0.7em;*/
+/*color: white;*/
+/*text-decoration: none;*/
+/*transition: color 0.1s linear;*/
+
+/*}*/
+
+/****************************************
+FORMS
+*****************************************/
+/*select {*/
+/*width: 100%;*/
+/*padding: 16px 20px;*/
+/*border: none;*/
+/*border-radius: 4px;*/
+/*background-color: #f1f1f1;*/
+/*}*/
+textarea {
+  /*width: 50%;*/
+  height: 150px;
+  /*padding: 12px 20px;*/
+  /*box-sizing: border-box;*/
+  /*border: 2px solid #ccc;*/
+  /*border-radius: 4px;*/
+  /*background-color: #f8f8f8;*/
+  /*resize: none;*/
+}
+
+input {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  padding-left: 5px;
+}
+
+.button {
+  background-color: #ff9012;
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.signup-panel {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+  margin: 0px;
+}
+
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+
+.signup-panel p {
+  font-size: 13px;
+  font-weight: 200;
+  /*margin-left: 25%;*/
+}
+
+.signup-panel .medium-text {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.signup-panel .button {
+  /*margin-left: 35%;*/
+}
+
+.remember-box {
+  line-height: normal;
+  margin: auto;
+  display: inline;
+  vertical-align: middle;
+}
+
+/*******************
+USER PROFILE
+ */
+.profile-default-image {
+  font-size: 10em;
+  color: rgba(95, 95, 95, 0.29);
+}
+
+.profile-image {
+  /*background-color: rgba(46, 47, 48, 0.58);*/
+  /*border-radius: 100%;*/
+  /*width: 10em;*/
+  /*height: 10em;*/
+  /*opacity: 100;*/
+}
+
+h1.profile {
+  font-size: 5em;
+}
+
+.language-box {
+  line-height: 1.5em;
+}
+
+.label {
+  margin: 0 0 5px 0;
+}
+
+/**************
+NAV BAR
+ */
+.nav-bar {
+  position: absolute;
+  left: 0;
+  width: 150px;
+  /*text-align: left;*/
+  padding: 5px;
+  background-color: #3c3c3c;
+  margin-bottom: 0;
+  /*vertical-align: middle;*/
+}
+
+.nav-link {
+  color: #fff;
+}
+
+a:hover.nav-link {
+  color: #ff9012;
+}
+
+ul.no-bullet {
+  margin-bottom: 0;
+}
+
+/***************
+MATCHES CARDS
+ */
+.profile-card {
+  padding: 1rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 2rem 0;
+  background-color: #fff;
+  transform: scale(0.98);
+  transition: all 0.2s;
+}
+
+.profile-card img {
+  width: 8rem;
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.profile-card .profile-info {
+  padding: 1rem;
+}
+
+.profile-card .profile-info h4 {
+  margin-top: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-card .profile-info p {
+  text-align: center;
+}
+
+.profile-card .profile-info .inline-list {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.profile-card .profile-info .inline-list li {
+  float: none;
+  display: inline-block;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-facebook {
+  font-size: 1.5rem;
+  color: #3b5998;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-facebook:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-twitter {
+  font-size: 1.5rem;
+  color: #55acee;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-twitter:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-linkedin {
+  font-size: 1.5rem;
+  color: #0077b5;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-linkedin:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-github {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-github:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-youtube {
+  font-size: 1.5rem;
+  color: #cc181e;
+}
+
+.profile-card .profile-info .inline-list i.fi-social-youtube:hover {
+  transform: scale(1.5);
+  transition: all .5s ease-in-out;
+}
+
+.profile-card .text {
+  color: #2E2F30;
+}
+
+.profile-card .language-box {
+  font-size: 80%;
+}
+
+.profile-card a:hover {
+  transform: scale(1)
+}
+
+/****************
+THREDDED
+ */
+.posts h2 {
+
+}
+

@@ -14,6 +14,7 @@ gem 'haml'
 gem 'font-awesome-rails'
 gem 'has_friendship'
 gem 'acts-as-taggable-on'
+gem 'thredded', '~> 0.10.0'
 
 
 group :development, :test do
