@@ -12,6 +12,7 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - HAML
 - Devise
 - ZURB Foundation
+- [Thredded](https://github.com/thredded/thredded) (forums)
 - [`has_friendship`](https://github.com/sungwoncho/has_friendship)
 - [`acts_as_taggable_on`](https://github.com/mbleigh/acts-as-taggable-on)
 - Faker
@@ -22,6 +23,7 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 
 ## Props To
 - Dana Mulder, who wrote this [lovely messaging tutorial](https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1#.t14w0ok4b). It was a great jumping-off point for what I really needed.
+- [Thredded](https://github.com/thredded/thredded) which was probably too much for this little social app, but designed so beautifully and works so well with the rest of the Rails environment, I have to give props.
 
 ## To Do
 - ~~Add languages for users~~
@@ -32,8 +34,8 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - ~~Style and sanitize params for login, edit user registration~~
 - ~~Create a nav bar~~
 - Get Foundation Javascript working for a "real" nav bar
-- Create forums so users can post publicly
-- Install an admin interface so users and forum posts can be monitored for inappropriate activity
+- ~~Create forums so users can post publicly~~
+- Install an admin interface so users ~~and forum posts~~ can be monitored for inappropriate activity
 - Research security settings and make sure user data is not compromisable
 - Add photos for users
 - Install i18n translation for at least Swedish, hopefully other languages too (will need help - Arabic, anyone?)

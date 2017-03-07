@@ -50,9 +50,14 @@
                   = submit_tag 'Be friends!', class: 'button', id: 'confirm_button'
               %hr.betterhr
   .posts
-    = Thredded::ApplicationController.render partial: 'thredded/users/posts',
-      locals: { posts: Thredded.posts_page_view(scope: @user.thredded_posts.order_newest_first.limit(5),
-      current_user: current_user) }
+    %h2 Forum Posts
+    .post-title
+      - @user.thredded_posts.order_newest_first.limit(5).each do |post|
+        In
+        = link_to post.postable.title, thredded.post_permalink_path(post)
+        at #{post.created_at.strftime("%d %B %Y %H:%M")} :
+        .post-content
+          = raw post.content
 
 :javascript
   $(document).ready( function() {
