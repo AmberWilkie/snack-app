@@ -52,4 +52,4 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 ## To Play
 In addition to database setup and `bundle` and self-evident Rails stuff, you also need to:
 - `rake thredded:install:emoji` locally and on your server.
-- Create messageboards manually, in the console. Use `Thredded::Messageboard.new(name: 'Whatever', description: 'whatever')`
+- If you want to create messagesboards manually, use `Thredded::Messageboard.new(name: 'Whatever', description: 'whatever')`
