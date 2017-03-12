@@ -18,6 +18,7 @@ gem 'thredded', '~> 0.10.0'
 gem 'leaflet-rails'
 gem 'dotenv'
 gem 'geocoder'
+gem 'gon'
 
 
 group :development, :test do

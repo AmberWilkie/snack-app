@@ -19,6 +19,10 @@
 
   %div#mapid
 
+= javascript_tag do
+  window.users = '#{@users}';
+
+
 :javascript
   var mymap = L.map('mapid').setView([57.71, 11.97], 12);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -27,5 +31,7 @@
     id: 'mapbox.outdoors',
     accessToken: 'pk.eyJ1IjoiYXF1YWFtYmVyIiwiYSI6ImNpejVreGVxNzAwNTEyeXBnbWc5eXNlcTYifQ.ah37yE5P2LH9LVzNelgymQ'
   }).addTo(mymap);
-
-    L.marker('<%= @user.first.zipcode %>').addTo(mymap);
+  gon.users.forEach(function(user) {
+    console.log('uhhhh')
+    L.marker([user.latitude, user.longitude]).addTo(mymap);
+  })

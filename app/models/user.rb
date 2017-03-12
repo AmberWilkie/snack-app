@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_friendship
   acts_as_taggable_on :languages, :learnings
   has_many :messages
+  geocoded_by :location
 
   before_save :check_languages
 
