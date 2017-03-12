@@ -88,4 +88,12 @@ RSpec.describe User, type: :model do
       expect(bob.conversations.first).to eq conversation
     end
   end
+
+  describe 'Geocoding' do
+    let(:bob) { FactoryGirl.create(:user)}
+
+    it 'should geocode' do
+      expect(bob.latitude.round(2)).to eq 57.70
+    end
+  end
 end
