@@ -15,6 +15,7 @@ gem 'font-awesome-rails'
 gem 'has_friendship'
 gem 'acts-as-taggable-on'
 gem 'thredded', '~> 0.10.0'
+gem 'leaflet-rails'
 
 
 group :development, :test do
