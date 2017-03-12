@@ -94,6 +94,7 @@ RSpec.describe User, type: :model do
 
     it 'should geocode' do
       expect(bob.latitude.round(2)).to eq 57.70
+      expect(bob.longitude.round(2)).to eq 11.94
     end
   end
 end
