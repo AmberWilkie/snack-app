@@ -33,6 +33,6 @@
   }).addTo(mymap);
   console.dir(gon.zips);
   Object.keys(gon.zips).forEach(function(zip) {
-    console.dir(zip);
-    L.marker(JSON.parse(zip)).addTo(mymap);
+    const marker = L.marker(JSON.parse(zip)).addTo(mymap);
+    marker.bindPopup(gon.zips[zip] + " language learners");
   })
