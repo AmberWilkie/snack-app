@@ -34,5 +34,5 @@
   console.dir(gon.zips);
   Object.keys(gon.zips).forEach(function(zip) {
     const marker = L.marker(JSON.parse(zip)).addTo(mymap);
-    marker.bindPopup(gon.zips[zip] + " language learners");
+    marker.bindPopup(gon.zips[zip] + " language learner(s)");
   })
