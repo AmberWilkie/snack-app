@@ -126,6 +126,7 @@ GEM
     friendly_id (5.2.0)
       activerecord (>= 4.0.0)
     gemoji (2.1.0)
+    geocoder (1.4.0)
     gherkin (4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -374,6 +375,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
+  geocoder
   haml
   has_friendship
   jbuilder (~> 2.5)
