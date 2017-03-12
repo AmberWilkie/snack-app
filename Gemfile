@@ -16,6 +16,7 @@ gem 'has_friendship'
 gem 'acts-as-taggable-on'
 gem 'thredded', '~> 0.10.0'
 gem 'leaflet-rails'
+gem 'dotenv'
 
 
 group :development, :test do

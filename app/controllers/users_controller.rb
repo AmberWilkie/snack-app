@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :matches]
 
   def index
-
+    @users = User.all
   end
 
   def show
