@@ -1,12 +1,16 @@
 language: ruby
 rvm:
-  - 2.3.0
+- 2.3.0
 before_script:
-  - bundle exec rake db:create --all
-  - bundle exec rake db:migrate
+- bundle exec rake db:create --all
+- bundle exec rake db:migrate
 script:
-  - bundle exec rake ci:tests
+- bundle exec rake ci:tests
 services:
-  - postgresql
+- postgresql
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: FmUVwXmh1mPiIFg/9sl0SL5sticGjNJJIqWBi1mz1B8XwqS0OHKbIXwJA/morYbKMT+2s5Z5jBqQ+i394AKTHX0EWhXQrHEWtIiAKWwkptCGtHODct6C2Cllar3JMKOTh2a3ETFHHPO7yKezgWVjXy2cqDWvIvVspPspnMZvuBHVECEC4AM7fg4ej5O7CYLjYJ7tjJQWL32V5sqgwfdPRlJvE76QIgKEifJDhUdlxAr59+yM6S96La/2h6voAGaJl5XWywn7bbOszbsRqUXupL7PEvUd8gVStfVR1EfQi5HDzMRAswVObFcQnrKvWXCqiCWLHYeoQzgJ8xC0ehuRvtaJDyFE8FKN4kxLASycmSIpyp4600qNX+6Mc9bMPN/Lmoqg+kIjLYIjVma8OPgLv14XE0rfaJXKtMCf4rDNlqbJ3TQwWr490LN4UodaDYaulbtuSyNqqRR6Rs7sIl7fYKk03pbSWdwwJAyxviNgHZNwnSfQrIF+Rb405WIp9fau4MW8yHKzluNs5L1alCZQCATnfkfnFZHIkrUQArSjTeH02Pb8EVLTr3stIwcFKML62qgN0BTQYEdQLaIToaEZez3mN6bJAEhlR4yL9yMyb9hXDmiSDg+v+DiNrMXy20rgaTVlMOUiDU5t23jDGZKSV0ZQo5AG75YU1hFXLVQlAyw=
