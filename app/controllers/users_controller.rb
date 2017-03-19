@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :matches]
 
   def index
-
+    gon.users = []
+    gon.zips = User.group(:latitude, :longitude).count
   end
 
   def show

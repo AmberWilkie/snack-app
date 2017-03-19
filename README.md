@@ -48,6 +48,8 @@ You can see a working copy at [snackar.herokuapp.com](https://snackar.herokuapp.
 - Fix the stupid problem with `rails db:environment:set RAILS_ENV=test`
 - Better 404 & 500 pages
 - Facebook OAuth
+- Seed file
+- Add continuous deployment with Travis
 
 ## To Play
 In addition to database setup and `bundle` and self-evident Rails stuff, you also need to:

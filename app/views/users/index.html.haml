@@ -16,3 +16,23 @@
     .top-space
       And if you're feeling very sassy, you might say hello to me on the
       = link_to 'Twitters', 'http://www.twitter.com/@heyamberwilkie'
+
+  %div#mapid
+
+= javascript_tag do
+  window.users = '#{@users}';
+
+
+:javascript
+  var mymap = L.map('mapid').setView([57.71, 11.97], 12);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.outdoors',
+    accessToken: 'pk.eyJ1IjoiYXF1YWFtYmVyIiwiYSI6ImNpejVreGVxNzAwNTEyeXBnbWc5eXNlcTYifQ.ah37yE5P2LH9LVzNelgymQ'
+  }).addTo(mymap);
+  console.dir(gon.zips);
+  Object.keys(gon.zips).forEach(function(zip) {
+    const marker = L.marker(JSON.parse(zip)).addTo(mymap);
+    marker.bindPopup(gon.zips[zip] + " language learner(s)");
+  })

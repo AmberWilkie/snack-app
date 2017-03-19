@@ -6,7 +6,7 @@ end
 
 Given(/^the following users exist:$/) do |table|
   table.hashes.each do |hash|
-    FactoryGirl.create(:user, email: hash[:email], name: hash[:name])
+    FactoryGirl.create(:user, email: hash[:email], name: hash[:name], location: hash[:location])
   end
 end
 
