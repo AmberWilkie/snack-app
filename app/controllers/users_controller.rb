@@ -4,9 +4,6 @@ class UsersController < ApplicationController
   def index
     gon.users = []
     gon.zips = User.group(:latitude, :longitude).count
-    # zips.each_with_index do |zip, index|
-    #   gon.users << zip[0]
-    # end
   end
 
   def show
