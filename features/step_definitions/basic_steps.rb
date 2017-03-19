@@ -2,7 +2,7 @@ Given(/^I am on the "([^"]*)" page$/) do |page|
   case page
     when 'registration'
       visit new_user_registration_path
-    when 'home'
+    when 'home' || 'index'
       visit root_path
     when 'matches'
       visit matches_path
@@ -48,4 +48,9 @@ end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |element, content|
   fill_in element, with: content
+end
+
+Then(/^show me an image of the page$/) do
+  page.save_screenshot '/screenshot.png'
+  Launchy.open '/screenshot.png'
 end
